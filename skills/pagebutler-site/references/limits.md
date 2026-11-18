@@ -1,0 +1,20 @@
+# Rate limits
+
+Pagebutler limits how fast each workspace, and each sign-in or site key, can deploy, upload and create sites, and how fast each sign-in or site key can send requests to its API and its MCP server. Honest work never meets a limit; meeting one means something unusual, such as a second deploy at the same time, a teammate deploying, or a loop of calls. The refusal is `rate_limited`: its message names whose limit it is, and `details.retry_at` when the request fits. `pb` waits out 60 seconds at most by itself; past that, the hint names the time.
+
+## What you do
+- Wait once as a limit asks, then try once more; refused again, stop and tell the person. Never create a site key, sign in again or switch tokens to get round a limit.
+- A wait you can't sit out in a chat: tell the person when it ends, and deploy again on their next message after it.
+- Make several changes before each deploy: every deploy lands a new preview.
+- Every request to Pagebutler's MCP server counts, tool lists and status checks included, from every session sharing the sign-in or key: check a status no more often than its answer says.
+- Creating sites has a limit a day, and a dry run never counts: try a name with one, then deploy changes to the site you made rather than making a new site for each attempt.
+- Requests to Pagebutler's API count too, reads and repeats included, from every program sharing the sign-in or site key: `pb` waits out a refusal by itself. A script of your own retries by itself too: it sends one request at a time, and when one is refused it waits as `Retry-After` says plus a random part of a second, trying each request up to 10 times within a minute of its first try; a longer wait stops it. On one sign-in or key, run at most two programs at a time that send many requests, such as a pull and a script; start a third once one has finished.
+
+## What the person hears
+- A deploy that waited for a limit and then finished is an ordinary preview: hand it over as one, without mentioning the wait.
+- When a limit stops a deploy, say it stopped before it finished, that nothing changed (the preview and the live site are as they were), and the time it gives to try again, such as: "Pagebutler limits how fast one workspace can deploy, so this deploy stopped before it finished. Nothing changed: the preview and the live site are as they were. I'll try again after 15:44 UTC." When the refusal names the workspace, add that someone else in it may be deploying too.
+- When the site limit stops a new site, say the site wasn't created and when to try again, such as: "Pagebutler limits how quickly new sites can be created, so I couldn't create the site acme-shop yet. Nothing else changed: there is no preview of it and nothing is live. I'll try again after 16:32 UTC."
+- A tool call you waited out and repeated needs no mention. Refused twice, stop and say so, such as: "Pagebutler limits how fast one app can use its tools, and I was going too fast, so I've paused. The call it refused changed nothing: the preview and the live site are as my last finished step left them."
+- When `pb` stops at the limit on requests, something else using the same sign-in or site key was sending them too: say so, and run it again once that has finished, such as: "Pagebutler limits how fast one app can send it requests, and something else using the same sign-in or site key was sending them too, so what I was running stopped. The request it refused changed nothing: the preview and the live site are as its last finished step left them. I'll try again once that has finished."
+- When a script of your own stops at that limit, say it went too fast and you'll run it more slowly, such as: "Pagebutler limits how fast one app can send it requests, and my script went past it, so it stopped partway. The request it refused changed nothing: the preview and the live site are as the script's last finished step left them. I'll run it again more slowly."
+- A limit never touches what visitors see, and a refused request changes nothing: never say "live" about a deploy or a call a limit stopped.

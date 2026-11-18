@@ -1,0 +1,6 @@
+{
+  "name": "pagebutler",
+  "description": "Pagebutler's plugin for Claude Code.",
+  "owner": { "name": "Pagebutler", "url": "https://pagebutler.ai" },
+  "plugins": [{ "name": "pagebutler", "source": "./" }]
+}

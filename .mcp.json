@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "pagebutler": {
+      "type": "http",
+      "url": "${PAGEBUTLER_MCP_URL:-https://api.pagebutler.ai/mcp}"
+    }
+  }
+}

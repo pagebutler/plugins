@@ -1,0 +1,15 @@
+{
+  "name": "pagebutler",
+  "displayName": "Pagebutler",
+  "version": "0.0.0-hecff93792666",
+  "description": "Build plain HTML websites with Claude Code and host them on butler.page. Every change is a preview first, and goes live only when you ask. Needs a Pagebutler account.",
+  "author": {
+    "name": "Pagebutler",
+    "url": "https://pagebutler.ai"
+  },
+  "homepage": "https://pagebutler.ai",
+  "repository": "https://github.com/pagebutler/plugins",
+  "license": "Apache-2.0",
+  "privacyPolicyUrl": "https://pagebutler.ai/privacy",
+  "keywords": ["website", "hosting", "cms", "preview", "publish"]
+}
