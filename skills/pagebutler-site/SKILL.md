@@ -14,7 +14,7 @@ Pagebutler hosts websites on butler.page and renders them itself. A site is plai
 ## Before you start
 - With Pagebutler's tools connected, call `pagebutler_guide` first: it returns these rules.
 - `pb`, here and in its output, means the full path of this skill's `scripts/pb` if that file exists, else `pb` on the PATH. With a shell and `pb`, run it in the site's folder; prefer it to the tools. With only the tools, as in a chat app, follow `references/chat.md`.
-- With a shell but no `pb`, run `npx --yes pagebutler@latest setup` (in Codex, with escalated permissions) and do what it prints. Never install anything else to get `pb`.
+- With a shell but no `pb`, run `npx --yes pagebutler@latest setup`, which installs `pb` and this skill from npm (in Codex, with escalated permissions, which asks the person), and do what it prints. Never install anything else to get `pb`.
 - Run `pb whoami`. If it isn't signed in, run plain `pb login`, give the person the lines it prints for them exactly as printed, and end your turn; once they've allowed it, run `pb login --check`, with nothing after it. Never put a token in a command, a file or a chat, and never ask the person to paste a sign-in link, code or email. More: `references/signing-in.md`.
 
 ## Start a site, or bring one

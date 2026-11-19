@@ -54,7 +54,7 @@
 | PB-T502 | `field-in-script` | warning | in `<script>` text |
 | PB-T503 | `field-in-js-file` | warning | in a JavaScript file |
 | PB-T601 | `generated-in-source` | error | written by Pagebutler, found in source |
-| PB-T602 | `page-attribute-reserved` | error | reserved for localisation (E16) |
+| PB-T602 | `page-attribute-reserved` | error | reserved for localisation |
 | PB-T603 | `unknown-marker` | error | `pb:` marker Pagebutler does not know |
 | PB-T604 | `region-placement` | error | a page Pagebutler can't add its regions to |
 | PB-T605 | `keep-pairing` | warning | a `pb:keep` marker without its pair |
