@@ -1,13 +1,13 @@
-# From a chat: Pagebutler's tools
+# From a chat: PageButler's tools
 
-Use Pagebutler's tools from a chat without a shell. Where `pb` runs, use it: no files pass through the conversation.
+Use PageButler's tools from a chat without a shell. Where `pb` runs, use it: no files pass through the conversation.
 
 ## Find or make the site
 1. Call `pagebutler_guide` first, then `sites_list` for the sites you can reach.
 2. For a new site, agree a slug with the person, then call `site_create`. If the slug is taken, ask the person for another; don't choose for them. A slug is:
 <!--pb:generated slug-rule-->
    - 3 to 35 lower-case letters, digits and single hyphens, starting with a letter and ending with a letter or digit.
-   - Never starting with `pagebutler` or `pb-`, and never a name Pagebutler keeps, such as `www`, `app`, `blog`, `docs`, `mail` or `test`: the refusal says why.
+   - Never starting with `pagebutler` or `pb-`, and never a name PageButler keeps, such as `www`, `app`, `blog`, `docs`, `mail` or `test`: the refusal says why.
 <!--/pb:generated-->
 3. If `site_create` names several workspaces, ask the person which gets the site, by the names `auth_whoami` lists; don't choose for them. Then call it again with `workspace` set to that workspace's slug.
 4. Creating a site makes no preview and puts nothing live.
@@ -16,7 +16,7 @@ Use Pagebutler's tools from a chat without a shell. Where `pb` runs, use it: no 
 1. Write the page's text in its HTML, with a `lang` on its `<html>` in the language of that text, such as `<html lang="en">`. A page that React, Vue or another framework draws in the browser is refused, since its text isn't in the HTML. If the person gave you such a page, rewrite it as plain HTML, keeping its interactive parts as scripts, and say so when you hand it over. Before rewriting a site of more than one page, ask.
 2. Before you deploy, put each image the page shows, except an SVG, in the site's image library: from a link or a ChatGPT attachment with `assets_import`, or a small file your code reads with `assets_upload` (`references/images.md`). Write the answer's `src` exactly as the `<img>`'s `src`, with an `alt` saying what it shows and no `srcset` or `<picture>`: in the page's content, it is then an image field the person can change. An SVG goes under `assets` as `text`; never put another image there or in a `data:` URL, or link another site's image. Leave out one that can't come in.
 3. Call `deploy_html` with the site and the page as text in `html`. Send one self-contained page a call, with its CSS and scripts inline, and leave `assets` out.
-4. Leave field ids to Pagebutler: as it deploys a page, it adds them to the page's text (`data-pb-*` attributes), so that text can be edited on Pagebutler, and lists the page in `annotated`. Don't write `data-pb-field`, `data-pb-scope` or `data-pb-item` yourself: edits stay with the ids Pagebutler chooses. Put `data-pb-ignore` on an element whose text must never be edited.
+4. Leave field ids to PageButler: as it deploys a page, it adds them to the page's text (`data-pb-*` attributes), so that text can be edited on PageButler, and lists the page in `annotated`. Don't write `data-pb-field`, `data-pb-scope` or `data-pb-item` yourself: edits stay with the ids PageButler chooses. Put `data-pb-ignore` on an element whose text must never be edited.
 5. For more pages, set `path` (`about/index.html` answers at `/about/`), then send them one call after another, or put the others under `assets` as `text` in one call. Limits: 50 HTML pages, 20,000 `assets` entries including removals, 2 MiB JSON. Omit `keep_files`; no parallel calls. Larger sites: `deploy_upload_archive` or `pb deploy`.
 6. When you must send another file, put it under `assets` by its path: `{ "text": "..." }` for CSS, JavaScript or SVG, `{ "base64": "..." }` for any other bytes. To remove a file an earlier deploy left, set its path to `null` under `assets`.
 7. `dry_run: true` checks the files' paths and sizes without deploying, not the page itself: only the real deploy checks the page, and can refuse it. It makes no preview.
@@ -53,11 +53,11 @@ Give this version's link first, then staging's, each whole, as a link whose text
 
 The `...` stands for the rest of each link: always give it in full.
 
-When `findings` has PB-T114, a page was deployed without field ids. If its hint is to send the page in a call of its own, do that. Otherwise tell the person its text can't be edited on Pagebutler yet, and why, and ask before splitting a page:
+When `findings` has PB-T114, a page was deployed without field ids. If its hint is to send the page in a call of its own, do that. Otherwise tell the person its text can't be edited on PageButler yet, and why, and ask before splitting a page:
 
-> The About page is on the preview, but its text can't be edited on Pagebutler yet: the page is too long. I can split it into two pages so both can be edited. Shall I?
+> The About page is on the preview, but its text can't be edited on PageButler yet: the page is too long. I can split it into two pages so both can be edited. Shall I?
 
-When the fault is Pagebutler's own, say only that the page's text can't be edited on Pagebutler for now.
+When the fault is PageButler's own, say only that the page's text can't be edited on PageButler for now.
 
 When the same files are sent again (`created: false`), no new version is made: that version lands on staging again, as a preview, and if staging already showed it, nothing changed.
 

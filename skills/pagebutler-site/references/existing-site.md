@@ -1,6 +1,6 @@
 # A site that already exists
 
-Use this when the person's site was made somewhere else: a folder of pages from another host, a site builder's export, or a site generator's project, such as Eleventy, Hugo, Jekyll or Astro. Pagebutler hosts the site's HTML as it is. The site keeps running where it is now until its domain points at Pagebutler.
+Use this when the person's site was made somewhere else: a folder of pages from another host, a site builder's export, or a site generator's project, such as Eleventy, Hugo, Jekyll or Astro. PageButler hosts the site's HTML as it is. The site keeps running where it is now until its domain points at PageButler.
 
 ## 1. Set it up with `pb init`
 In the folder that holds the site, run `pb init --name <slug> --title "<title>"` with the person's own names: the domain without its ending, such as `acme-shop` for acme-shop.example, makes a good slug. Never write `pb.config.json` from scratch. Then do what its `Next:` line says.
@@ -10,7 +10,7 @@ In the folder that holds the site, run `pb init --name <slug> --title "<title>"`
 - **Pages of its own beside a generator's leftovers,** such as a `_site/` from `jekyll serve` or a `package.json` naming a generator that didn't build these pages: add the generator's folder (`_site/`) to `.pbignore`, then run `pb init` again, which then sets up this folder.
 - **`pb.config.json` gone after a build** (most generators empty their folder): run `pb init` there again with the site's own `--name` and `--title`, never a name made from `dist` or `_site`.
 - **An app**, whose `index.html` is an empty page a script fills in: `pb init` refuses it. Ask the person before you rewrite it as pages (`references/telling-the-person.md`).
-- **`pb.config.json` already there:** it is a Pagebutler site. Go on to step 2.
+- **`pb.config.json` already there:** it is a PageButler site. Go on to step 2.
 
 ## 2. Check it
 Run `pb check`, and fix every error before you deploy. On a site made elsewhere, most come from files that aren't part of the site.
@@ -32,9 +32,9 @@ Run `pb annotate`, then `pb annotate --accept`, before you write any `data-pb-fi
 Run `pb deploy`: a preview, as for any site. Publish only when the person asks; the domain comes after that (`references/domains.md`).
 
 ## What to tell the person
-- At the first hand-over, with the preview's links: "This is a preview of your site on Pagebutler, not live yet. Your current site is unchanged, and keeps running until your domain points here."
+- At the first hand-over, with the preview's links: "This is a preview of your site on PageButler, not live yet. Your current site is unchanged, and keeps running until your domain points here."
 - A site a generator built: once a session, in the words `references/telling-the-person.md` gives for generator output.
 - When git leaves the built folder out (`git check-ignore -q _site` succeeds), ask: "The pages Eleventy built aren't saved in your git repository, which is set to leave them out. Now that they are the site, shall I keep them in git?"
 - A form the old host sent itself (PB-10 `server-form`): the form line in `references/telling-the-person.md`. When its message names Netlify's form handling, Cloudflare Pages' Static Forms or a file's code, such as PHP code, rather than "server code", add: "Your current site still sends it until your domain points here."
 - Files you left out: only what the person will miss, such as a redirect their old host made that the site doesn't have yet.
-- Each `.htaccess` rule `pb check` names, by what it did for visitors: "Your old server counted store-link taps in its log. Pagebutler can't, so they aren't counted from now on." Nothing for one that only set up the old server, such as a PHP setting.
+- Each `.htaccess` rule `pb check` names, by what it did for visitors: "Your old server counted store-link taps in its log. PageButler can't, so they aren't counted from now on." Nothing for one that only set up the old server, such as a PHP setting.

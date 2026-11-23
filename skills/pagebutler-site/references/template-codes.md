@@ -5,7 +5,7 @@
 <!--pb:generated template-codes-->
 | Code | Name | Severity | What it means |
 |---|---|---|---|
-| PB-T101 | `unknown-attribute` | error | not a Pagebutler attribute |
+| PB-T101 | `unknown-attribute` | error | not a PageButler attribute |
 | PB-T102 | `unknown-value` | error | value not allowed |
 | PB-T103 | `element-cannot-bind` | error | element cannot carry this field |
 | PB-T104 | `attribute-out-of-context` | error | attribute in the wrong place |
@@ -53,10 +53,10 @@
 | PB-T501 | `field-in-template` | warning | inside `<template>` |
 | PB-T502 | `field-in-script` | warning | in `<script>` text |
 | PB-T503 | `field-in-js-file` | warning | in a JavaScript file |
-| PB-T601 | `generated-in-source` | error | written by Pagebutler, found in source |
+| PB-T601 | `generated-in-source` | error | written by PageButler, found in source |
 | PB-T602 | `page-attribute-reserved` | error | reserved for localisation |
-| PB-T603 | `unknown-marker` | error | `pb:` marker Pagebutler does not know |
-| PB-T604 | `region-placement` | error | a page Pagebutler can't add its regions to |
+| PB-T603 | `unknown-marker` | error | `pb:` marker PageButler does not know |
+| PB-T604 | `region-placement` | error | a page PageButler can't add its regions to |
 | PB-T605 | `keep-pairing` | warning | a `pb:keep` marker without its pair |
 | PB-T701 | `collection-undeclared` | error | collection not in `pb.config.json` |
 | PB-T702 | `collection-item-count` | error | not exactly one item template |

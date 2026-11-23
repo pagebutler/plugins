@@ -1,6 +1,6 @@
 # Every attribute and file convention in v0
 
-These are all of Pagebutler's attributes and file conventions that render in v0: where each goes, its value, the path it gives, and what editors can do with it. Any other `data-pb-*` attribute is an error that names what to write instead, and some names are kept for Pagebutler: both are in `references/substitutes.md`.
+These are all of PageButler's attributes and file conventions that render in v0: where each goes, its value, the path it gives, and what editors can do with it. Any other `data-pb-*` attribute is an error that names what to write instead, and some names are kept for PageButler: both are in `references/substitutes.md`.
 
 <!--pb:generated construct-cards-v0-->
 ### `data-pb-field`
@@ -83,7 +83,7 @@ Makes the fields inside an element read-only for editors.
 ```
 
 ### `data-pb-ignore`
-Takes an element and everything inside it out of Pagebutler's view.
+Takes an element and everything inside it out of PageButler's view.
 - Write: `data-pb-ignore`
 - Put it on: Any element in a page's `<body>` or in a partial; not on an element with `data-pb-include`
 - Value: None: it works by being present
@@ -155,12 +155,12 @@ These render from v1. In v0, `pb check` warns (PB-T901) and the page is served a
 `data-pb-collection`, `data-pb-sort`, `data-pb-limit`, `data-pb-offset`, `data-pb-tag`, `data-pb-author`, `data-pb-featured`, `data-pb-related`, `data-pb-per-page`, `data-pb-pagination`, `data-pb-empty`, `data-pb-keep`, `data-pb-format`, `data-pb-fit`, `data-pb-entry`
 <!--/pb:generated-->
 
-## What Pagebutler writes
-Pagebutler writes these into the pages it serves. Never write them yourself, and never copy them from a fetched page into your files:
+## What PageButler writes
+PageButler writes these into the pages it serves. Never write them yourself, and never copy them from a fetched page into your files:
 
 <!--pb:generated construct-generated-v0-->
-- `data-pb-path`: The merge key of a field, written on every field node Pagebutler bakes.
-- `aria-current`: Marks a partial's link to the page it is on, written by Pagebutler.
-- `pb:include`: The comments Pagebutler writes around an expanded partial.
-- `pb:` regions: The marked regions where Pagebutler writes SEO tags, custom code and its script from v1, written empty until then.
+- `data-pb-path`: The merge key of a field, written on every field node PageButler bakes.
+- `aria-current`: Marks a partial's link to the page it is on, written by PageButler.
+- `pb:include`: The comments PageButler writes around an expanded partial.
+- `pb:` regions: The marked regions where PageButler writes SEO tags, custom code and its script from v1, written empty until then.
 <!--/pb:generated-->

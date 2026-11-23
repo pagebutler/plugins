@@ -1,6 +1,6 @@
 # After a deploy: the merge report
 
-Every deploy merges the new code with what people typed on Pagebutler, and its merge report says what that did to the preview: the lines `pb deploy` prints from `merge report:` on, or `merge_report` in `deploy_status`'s answer. Its hint, the first line, counts the whole report and says what to do. Tell the person what it says in their words, without field paths unless they ask, and say it is about the preview.
+Every deploy merges the new code with what people typed on PageButler, and its merge report says what that did to the preview: the lines `pb deploy` prints from `merge report:` on, or `merge_report` in `deploy_status`'s answer. Its hint, the first line, counts the whole report and says what to do. Tell the person what it says in their words, without field paths unless they ask, and say it is about the preview.
 
 ## Reading `pb deploy`
 `pb deploy` waits for its preview to land: seconds for a small site, minutes for one of thousands of files. If it outlasts your command's time limit, wait for it to finish and read its output; never start a second `pb deploy` of the same files meanwhile. If it stopped, run it again: it uploads nothing, and waits for the same landing.
@@ -38,7 +38,7 @@ Each `command:` line under a `held:` line is a `pb resolve` command. It records 
 - Languages: a value with no language of its own, such as a number or a name, fits any language. After swapping two pages' languages, map each page's values to the page now in their language, with a plain exact map. Use maps of every page into a new language, which a report may offer, only when every held value's words are in that language.
 
 ## Edits not live yet
-A deploy keeps every unpublished edit made on Pagebutler, and moves it with its field where the new code renamed that field. The report lists the edits the new code touched: the `draft:` lines, `draft_conflicts` in the JSON.
+A deploy keeps every unpublished edit made on PageButler, and moves it with its field where the new code renamed that field. The report lists the edits the new code touched: the `draft:` lines, `draft_conflicts` in the JSON.
 - Tell the person after you hand over the preview, saying whose edit it is when it isn't theirs. Never call it a conflict, and never say it holds the deploy or a publish: it doesn't.
 - The new code changed the field too: "This update also changes the home page title, which you edited. Your version is kept, and the preview shows it. Do you want to keep yours, or use the developer's?" Someone else's: "This update also changes the home page title, which Ana edited and hasn't published. Her version is kept, and the preview shows it. You may want to check with her."
 - Offer both, and do only what the person picks, for that field: `pb fields set '<path>' --take edit`, to keep the person's version, or `--take code`, to use the developer's; without `pb`, that `take` on `page_update_fields`. For several, list them and ask once: the answer covers each one listed. Then say "Your version is kept." or "The preview now shows the developer's title; the live site is unchanged." Keep or replace someone else's edit only when the person names that edit, and say whose it was. If a take is refused because the field changed, tell the person before they pick again.

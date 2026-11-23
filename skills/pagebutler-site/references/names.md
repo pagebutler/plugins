@@ -39,7 +39,7 @@ Rows marked "renders from v1" are read in v0 as written, with no paths.
 - **A tag or author archive template** (renders from v1): `data-pb-field="tag.name"` in `blog/tag/_tag.html` gives Subject: `entries.<collection>/<slug>.<name>`. SEO: `pages.<archive page>.seo.*`. Otherwise: `pages.<folder>/_<name>.<name>`.
 - **A collection list item** (renders from v1): `data-pb-field="title"` inside `data-pb-collection="posts"` gives `entries.<collection>/<slug>.<name>`, per rendered item.
 - **Inside a tags field** (renders from v1): `data-pb-field="name"` inside `data-pb-field="tags"` gives `name`: `entries.tags/<tag>.name` when tags is a collection, else none. `url`: none.
-- **Inside `data-pb-pagination`** (renders from v1): `data-pb-field="prev"`, `"next"`, `"page"` or `"pages"` gives None: bindings Pagebutler fills. Other names: `pages.<page>.<name>`.
+- **Inside `data-pb-pagination`** (renders from v1): `data-pb-field="prev"`, `"next"`, `"page"` or `"pages"` gives None: bindings PageButler fills. Other names: `pages.<page>.<name>`.
 - **A hand-authored entry page** (renders from v1): `data-pb-entry="posts/notes-on-glass"` on `<html>` gives Declared fields: `entries.<collection>/<slug>.<name>`. Otherwise: `pages.<page>.<name>`.
 <!--/pb:generated-->
 

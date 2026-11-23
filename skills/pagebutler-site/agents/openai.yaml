@@ -1,4 +1,4 @@
 interface:
-  display_name: "Pagebutler site"
+  display_name: "PageButler site"
   short_description: "Build a plain website, preview it on butler.page, and publish it when asked."
   default_prompt: "Use the pagebutler-site skill to build this website, check it and deploy a preview. Don't publish until I ask."

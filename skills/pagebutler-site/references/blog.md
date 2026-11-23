@@ -1,6 +1,6 @@
 # The blog
 
-Never scaffold a site generator for a blog: on Pagebutler, the blog is a collection. `pb init --blog` adds one beside the starter site: a `posts` collection and an `authors` collection in `pb.config.json`, the blog's index page, and three templates Pagebutler renders once per post, tag and author.
+Never scaffold a site generator for a blog: on PageButler, the blog is a collection. `pb init --blog` adds one beside the starter site: a `posts` collection and an `authors` collection in `pb.config.json`, the blog's index page, and three templates PageButler renders once per post, tag and author.
 
 ## Until collections render (v1)
 Collections render from v1. Until then:
@@ -8,7 +8,7 @@ Collections render from v1. Until then:
 - `pb check` gives a PB-T901 warning on each template, list and collection. They need no change: keep the markup.
 - The header doesn't link to `/blog/`. Leave it so until posts render.
 - Don't write posts as pages under `/blog/`: those addresses belong to the collection. A page the person needs now goes elsewhere, written with `pb new page`.
-- Tell the person at every hand-over that the blog shows a sample post until Pagebutler starts building blogs in a later release, before you promise it works.
+- Tell the person at every hand-over that the blog shows a sample post until PageButler starts building blogs in a later release, before you promise it works.
 
 ## The files
 They are shown for a site titled "My site", in English. The `collections` block of `pb.config.json`:

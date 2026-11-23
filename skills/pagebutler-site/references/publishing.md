@@ -3,7 +3,7 @@
 `pb publish` takes live what the person asked for, and nothing more. Run it only once they ask for the site, or their edits, to go live. Through the tools, `site_publish` publishes as `references/tools.md` says, and `deploy_rollback` rolls back, below.
 
 ## Which scope
-- The preview's code: `pb publish`. Edits people made on Pagebutler stay unpublished, and its lines say whose.
+- The preview's code: `pb publish`. Edits people made on PageButler stay unpublished, and its lines say whose.
 - Edits alone, on the code that is live: `pb publish --scope content --content=fields:<path>,<path>`, with the paths you changed. `--content=author:<id>` takes one person's edits (`pb whoami --json` prints yours as `user.id`), and `--content=draft` everyone's: ask the person first when someone else's wait.
 - The code and edits together, only when the person asks for both, such as "publish everything", once they have seen the preview: `--scope both` with a `--content`.
 - Before the site's first publish, edits can't go live alone, since no code is live: they go with the code, `--scope both` (tools: `both`), once the person asks for the site live.

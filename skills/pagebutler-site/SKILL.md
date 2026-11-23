@@ -1,18 +1,18 @@
 ---
 name: pagebutler-site
-description: "Build, edit, check, deploy, preview and publish a website on Pagebutler, which hosts sites on butler.page. Use it when a person wants a website made, changed, put online or taken live there, when a folder holds pb.config.json, or when the pb command or Pagebutler's tools, such as pagebutler_guide, are available. Pagebutler sites are plain HTML, CSS and JavaScript that Pagebutler renders, never a site generator or framework. Not for app code or documentation sites."
+description: "Build, edit, check, deploy, preview and publish a website on PageButler, which hosts sites on butler.page. Use it when a person wants a website made, changed, put online or taken live there, when a folder holds pb.config.json, or when the pb command or PageButler's tools, such as pagebutler_guide, are available. PageButler sites are plain HTML, CSS and JavaScript that PageButler renders, never a site generator or framework. Not for app code or documentation sites."
 license: Apache-2.0
-compatibility: Needs the pb command in a shell, or Pagebutler's MCP server (https://api.pagebutler.ai/mcp) connected.
+compatibility: Needs the pb command in a shell, or PageButler's MCP server (https://api.pagebutler.ai/mcp) connected.
 metadata:
   vocabulary: "0"
 ---
 
-# Pagebutler
+# PageButler
 
-Pagebutler hosts websites on butler.page and renders them itself. A site is plain HTML pages, CSS, JavaScript and files you write, with `data-pb-*` attributes marking shared parts and the text people may edit. Never scaffold a site generator, framework or single-page app (no `npm create astro`, Vite, Next, Hugo or Eleventy), or keep one as a second source of the pages: `pb check` and every deploy report its output and refuse an app's empty shell. Write the site as you would a Ghost theme, with attributes instead of Handlebars. A tool may compile CSS or JavaScript that pages load (`npx @tailwindcss/cli`, `npx esbuild --bundle`); no tool may write an `.html` file. It suits landing pages, portfolios and company sites, not documentation sites or app code.
+PageButler hosts websites on butler.page and renders them itself. A site is plain HTML pages, CSS, JavaScript and files you write, with `data-pb-*` attributes marking shared parts and the text people may edit. Never scaffold a site generator, framework or single-page app (no `npm create astro`, Vite, Next, Hugo or Eleventy), or keep one as a second source of the pages: `pb check` and every deploy report its output and refuse an app's empty shell. Write the site as you would a Ghost theme, with attributes instead of Handlebars. A tool may compile CSS or JavaScript that pages load (`npx @tailwindcss/cli`, `npx esbuild --bundle`); no tool may write an `.html` file. It suits landing pages, portfolios and company sites, not documentation sites or app code.
 
 ## Before you start
-- With Pagebutler's tools connected, call `pagebutler_guide` first: it returns these rules.
+- With PageButler's tools connected, call `pagebutler_guide` first: it returns these rules.
 - `pb`, here and in its output, means the full path of this skill's `scripts/pb` if that file exists, else `pb` on the PATH. With a shell and `pb`, run it in the site's folder; prefer it to the tools. With only the tools, as in a chat app, follow `references/chat.md`.
 - With a shell but no `pb`, run `npx --yes pagebutler@latest setup`, which installs `pb` and this skill from npm (in Codex, with escalated permissions, which asks the person), and do what it prints. Never install anything else to get `pb`.
 - Run `pb whoami`. If it isn't signed in, run plain `pb login`, give the person the lines it prints for them exactly as printed, and end your turn; once they've allowed it, run `pb login --check`, with nothing after it. Never put a token in a command, a file or a chat, and never ask the person to paste a sign-in link, code or email. More: `references/signing-in.md`.
@@ -46,7 +46,7 @@ A page is a complete HTML document, named by its file (`about/index.html` is `ab
 - Never invent a `data-pb-*` attribute. There are no conditionals, loops, layouts or computed values: write the HTML as it should read. An unknown attribute is an error saying what to write instead (`references/substitutes.md`); every real one is in `references/constructs.md`, and redirects, headers and file types in `references/serving.md`.
 - Each page has its own `<title>` and `<meta name="description">` as plain tags in `<head data-pb-include="head">`: never in `_partials/head.html`, and never with `data-pb-field`.
 - Link within the site by root-relative paths (`/about/`), never to a preview address.
-- Don't add `robots.txt` or `sitemap.xml` unless the person asks for their own rules: Pagebutler writes both.
+- Don't add `robots.txt` or `sitemap.xml` unless the person asks for their own rules: PageButler writes both.
 
 ## Check, deploy, look, publish
 1. Put any compile step in `pb.config.json`'s `build.command`, without `--watch`: `pb deploy` runs it.
@@ -58,7 +58,7 @@ A page is a complete HTML document, named by its file (`about/index.html` is `ab
 ## Previews
 - Whenever you hand over a link or report a change, say "preview", or "live" once a publish says so.
 - Hand share links over exactly as given, never in a code block: this version's first, then staging's, for reviewers. Give the expiry once, as a date: anyone with these links can view the preview until then. Never post them anywhere public, such as commits, issues or logs.
-- Pagebutler adds a "Preview - not live" tag as it serves a preview, never in your files or on the live site: don't change the site for it.
+- PageButler adds a "Preview - not live" tag as it serves a preview, never in your files or on the live site: don't change the site for it.
 
 ## What the person hears
 - Call a site by its display name.
@@ -68,7 +68,7 @@ A page is a complete HTML document, named by its file (`about/index.html` is `ab
 
 ## House rules
 - The last upload is the code: edit the site's files, never a generator's source.
-- A value a person edited on Pagebutler, published or not, is kept when you deploy. Replace it only when they named that field, and say so.
+- A value a person edited on PageButler, published or not, is kept when you deploy. Replace it only when they named that field, and say so.
 - Never publish a person's unpublished edit unless they named it.
 - Never roll a site back unasked; prefer a new deploy that fixes it.
 - In a site's folder, run `pb status` first; if it says to pull, run `pb pull` before you edit, then tell the person: `references/pulling.md`.

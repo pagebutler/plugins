@@ -18,8 +18,8 @@ Running `pb login` again checks the earlier link first, and gives it again while
 - `pb login --with-token` reads a token from stdin, a pipe or a file, never the terminal.
 - In CI, set `PAGEBUTLER_TOKEN` from the CI's secrets: it is used in place of any stored sign-in, and `pb login` refuses to run while it is set.
 - In CI, `pb deploy --strict` exits 2 when the preview can't be published yet, so the job fails, and `--require-base <version>` refuses the deploy when another was committed after that version. Never use `--strict` yourself: read the preview's lines instead.
-- Never ask the person to paste a sign-in link, an email Pagebutler sent, or a code from one into the chat, and never open such a link yourself. Say: "Open the link Pagebutler emailed you, on this device."
-- `pb logout` ends a `pb login` sign-in on this computer and at Pagebutler. A token given to `--with-token` is only deleted here: it stays valid until it expires or is revoked.
+- Never ask the person to paste a sign-in link, an email PageButler sent, or a code from one into the chat, and never open such a link yourself. Say: "Open the link PageButler emailed you, on this device."
+- `pb logout` ends a `pb login` sign-in on this computer and at PageButler. A token given to `--with-token` is only deleted here: it stays valid until it expires or is revoked.
 
 ## Who you are and what you may do
 - Run `pb whoami` (`auth_whoami` through the tools) at the start of a session, and after any refusal of your sign-in (401) or your permission (403). Under `--json`, `credential.scopes` lists what the sign-in may do, and `workspaces[].role` the person's role in each workspace.
@@ -35,7 +35,7 @@ Running `pb login` again checks the earlier link first, and gives it again while
 - When a refusal says this connection can't do something, ask the person to add the wider address; don't look for another way round it.
 
 ## Site keys
-A site key lets a job, such as a deploy from CI, work on one site without anyone signing in. Pagebutler has no `pb` command or tool for site keys yet. Whenever one is made, handed over, rotated or revoked:
+A site key lets a job, such as a deploy from CI, work on one site without anyone signing in. PageButler has no `pb` command or tool for site keys yet. Whenever one is made, handed over, rotated or revoked:
 - Before one is made, tell the person what it may do (a key that can deploy can also publish the preview live), when it expires, and that it stops working if they leave the workspace.
 - Its secret is shown once. Hand it to the secret store without echoing it: pipe it into a command that reads stdin, such as `gh secret set PAGEBUTLER_TOKEN`. Never pass it as an argument, write it to a file or put it in a chat message.
 - Rotate a key by making the new one, replacing the secret with it, then revoking the old one.
