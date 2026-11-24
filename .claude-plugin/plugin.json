@@ -1,7 +1,7 @@
 {
   "name": "pagebutler",
   "displayName": "PageButler",
-  "version": "0.0.0-hd108defd7515",
+  "version": "0.0.0-h8027d9ac2812",
   "description": "Build plain HTML websites with Claude Code and host them on butler.page. Every change is a preview first, and goes live only when you ask. Needs a PageButler account.",
   "author": {
     "name": "PageButler",

@@ -17,6 +17,8 @@
 ## Opening a preview
 After the first `pb deploy` that succeeds in a conversation, open staging's link in the person's browser. On their computer, run `open "<link>"` (macOS) or `xdg-open "<link>"` (Linux); in the Codex app, `open_in_codex` with a browser target. Elsewhere, give them the link to open.
 
+In a browser, a preview opens under PageButler's bar, with the page in a frame below it; the live site never has the bar. To inspect the page itself, read the frame, or fetch the address: a fetch gets the page with the preview tag (Preview, not live). Never change the site to make room for the bar, and never tell the person how to hide it: there is no way.
+
 ## Waiting
 - Before `pb deploy`, tell the person you're making a preview, not live yet, and about how long it takes, as `pb status`'s line `A deploy of <site> usually takes ...` says. With no such line, as on a first deploy, say you can't tell yet.
 - Run `pb deploy` with your shell's default time limit: it prints where the landing is and how long it has taken as it goes. If the shell hands it back still running, tell the person its latest line once, in their words, then wait for it to end and read the rest. If your shell stops commands at their limit instead, give `pb deploy` 15 minutes, or as long as the shell allows. Never start a second `pb deploy` meanwhile.
