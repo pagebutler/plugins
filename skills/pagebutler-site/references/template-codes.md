@@ -50,6 +50,7 @@
 | PB-T407 | `template-syntax` | warning | another tool's template syntax in a partial |
 | PB-T408 | `include-host-children` | warning | an include's host holds markup its partial replaces |
 | PB-T409 | `head-partial-repeats` | warning | a head partial repeats what the page's head holds |
+| PB-T410 | `another-tool-includes` | warning | another tool writes the partials into their hosts |
 | PB-T501 | `field-in-template` | warning | inside `<template>` |
 | PB-T502 | `field-in-script` | warning | in `<script>` text |
 | PB-T503 | `field-in-js-file` | warning | in a JavaScript file |
