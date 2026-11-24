@@ -3,8 +3,6 @@
 Every deploy merges the new code with what people typed on PageButler, and its merge report says what that did to the preview: the lines `pb deploy` prints from `merge report:` on, or `merge_report` in `deploy_status`'s answer. Its hint, the first line, counts the whole report and says what to do. Tell the person what it says in their words, without field paths unless they ask, and say it is about the preview.
 
 ## Reading `pb deploy`
-`pb deploy` waits for its preview to land: seconds for a small site, minutes for one of thousands of files. If it outlasts your command's time limit, wait for it to finish and read its output; never start a second `pb deploy` of the same files meanwhile. If it stopped, run it again: it uploads nothing, and waits for the same landing.
-
 `pb deploy` prints the report's lines after any findings and before the links, each starting with a label:
 - `note:` what the merge did, such as whose wording it kept: tell the person. An `override:` line under it takes the new code's wording for all of that field, even where both sides' edits were merged: run it only when the person asked to change that field, and say so.
 - `held:` values a person typed that the new code has no place for, which keep the preview from being published. Do only what its line allows with the `command:` lines under it: when it isn't about a value you moved, tell the person and stop.

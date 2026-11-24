@@ -18,6 +18,10 @@
 After the first `pb deploy` that succeeds in a conversation, open staging's link in the person's browser. On their computer, run `open "<link>"` (macOS) or `xdg-open "<link>"` (Linux); in the Codex app, `open_in_codex` with a browser target. Elsewhere, give them the link to open.
 
 ## Waiting
+- Before `pb deploy`, tell the person you're making a preview, not live yet, and about how long it takes, as `pb status`'s line `A deploy of <site> usually takes ...` says. With no such line, as on a first deploy, say you can't tell yet.
+- Run `pb deploy` with your shell's default time limit: it prints where the landing is and how long it has taken as it goes. If the shell hands it back still running, tell the person its latest line once, in their words, then wait for it to end and read the rest. If your shell stops commands at their limit instead, give `pb deploy` 15 minutes, or as long as the shell allows. Never start a second `pb deploy` meanwhile.
+- If `pb deploy` stopped, run it again: it uploads nothing, and waits for the same landing.
+- When a line says PageButler is trying again, or that the landing is taking longer than usual, tell the person once, in their words, and that nothing live changed.
 - `pb publish` returns once the site is live. Say it is live, visible everywhere within a minute, and stop.
 - `pb publish --no-wait` returns once the publish is accepted: it is not live yet. Run the `pb publish status <job>` it prints before you say it is live; exit 75 means not yet, so run it again in a few seconds.
 - `pb publish --wait` returns once every visitor sees it, for a person or a CI job that asks for that.
@@ -37,6 +41,8 @@ After the first `pb deploy` that succeeds in a conversation, open staging's link
 - After a rollback, `site_publish` refuses `code` and `both` (`rollback_unacknowledged`), unless the preview's code is already live, until one names that rollback in `acknowledge_rollback`, as `site_get`'s `rolled_back` does. Ask the person whether the preview's code should replace the rollback, and set it only if they agree. Publishing edits is never refused.
 
 ## What the person hears
+- Before a deploy: "I'm making a preview of your update now. It usually takes about a minute, and nothing on the live site changes." On a first deploy: "I'm making the first preview of your site now. It's the first, so I can't say yet how long it takes."
+- Taking longer: "The preview is taking longer than usual, about 4 minutes so far. PageButler carries on by itself, and nothing on the live site has changed."
 - Refused after a rollback: "Sam rolled the live site back to Tuesday's version on Thursday. Publishing the preview's update now would replace that rollback. Shall I go ahead?"
 - The preview changed since you checked: "Nothing went live: the preview changed since I checked. Sam deployed a newer version 3 minutes ago. Do you want to look at it before I publish?"
 - Before rolling back: "If I roll back now, the live site goes back to Tuesday's version, which Ana published. Ana's new headline from Thursday would come off the live site, but it isn't lost: it waits as an edit, and publishing her edits brings it back. Shall I roll back?"

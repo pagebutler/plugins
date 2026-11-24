@@ -51,14 +51,14 @@ A page is a complete HTML document, named by its file (`about/index.html` is `ab
 ## Check, deploy, look, publish
 1. Put any compile step in `pb.config.json`'s `build.command`, without `--watch`: `pb deploy` runs it.
 2. Run `pb check` before you write a second page and before every deploy. Exit 1 (`ok: false` under `--json`): fix every error and check again. Never delete a person's file for a hint: add the `.pbignore` line it names. An answer with a `code` means it couldn't check: follow the hint. `details.unexpanded` or `details.skipped`: fix the errors, then check again for the rest. Codes: `references/template-codes.md`, `references/site-rules.md`.
-3. `pb deploy` lands a new version on staging: a preview. Relay its links and preview sentence as printed, and say it is a preview, not live yet. Before them it prints its merge report: `references/merge-report.md`. If it fails, follow its `hint:` and tell the person its last line. Running it again is always safe.
+3. `pb deploy` lands a new version on staging: a preview. Relay its links and preview sentence as printed, and say it is a preview, not live yet. Before them it prints its merge report: `references/merge-report.md`. If it fails, follow its `hint:` and tell the person its last line. Running it again is always safe. Before it runs: `references/publishing.md`.
 4. After the first `pb deploy` that succeeds in a conversation, before anything else, open staging's link (`Open staging, ...`) in the person's browser (how: `references/publishing.md`) and ask them to keep the tab: it shows each new preview.
-5. Publish only when the person asks for the site to go live; liking the preview is not asking. `pb publish` takes the preview's code live, with the content already live. Relay its lines and stop: its "Live at" line is the whole report, and "is already live at" is a success too. Edits, `--dry`, waiting, rolling back: `references/publishing.md`; the site's own domain: `references/domains.md`.
+5. Publish only when the person asks for the site to go live; liking the preview is not asking. `pb publish` takes the preview's code live, with the content already live. Relay its lines and stop: its "Live at" line is the whole report, and "is already live at" is a success too. Edits, `--dry`, rolling back: `references/publishing.md`; the site's own domain: `references/domains.md`.
 
 ## Previews
 - Whenever you hand over a link or report a change, say "preview", or "live" once a publish says so.
-- Hand share links over exactly as given, never in a code block: this version's first, then staging's, for reviewers. Give the expiry once, as a date: anyone with these links can view the preview until then. Never post them anywhere public, such as commits, issues or logs.
-- PageButler adds a "Preview - not live" tag as it serves a preview, never in your files or on the live site: don't change the site for it.
+- Hand share links over exactly as given, never in a code block: this version's first, then staging's, for reviewers. Give the expiry once, as a date: until then, either opens every preview, later ones too, so never post them anywhere public, such as commits, issues or logs.
+- PageButler tags each preview it serves "Preview - not live", never your files or the live site: don't change the site for it.
 
 ## What the person hears
 - Call a site by its display name.
