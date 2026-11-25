@@ -9,7 +9,7 @@ metadata:
 
 # PageButler
 
-PageButler hosts websites on butler.page and renders them itself. A site is plain HTML pages, CSS, JavaScript and files you write, with `data-pb-*` attributes marking shared parts and the text people may edit. Never scaffold a site generator, framework or single-page app (no `npm create astro`, Vite, Next, Hugo or Eleventy), or keep one as a second source of the pages: `pb check` and every deploy report its output and refuse an app's empty shell. Write the site as you would a Ghost theme, with attributes instead of Handlebars. A tool may compile CSS or JavaScript that pages load (`npx @tailwindcss/cli`, `npx esbuild --bundle`); no tool may write an `.html` file. It suits landing pages, portfolios and company sites, not documentation sites or app code.
+PageButler hosts websites on butler.page and renders them itself. A site is plain HTML pages, CSS, JavaScript and files you write, with `data-pb-*` attributes marking shared parts and the text people may edit. Never scaffold a site generator, framework or single-page app (no `npm create astro`, Vite, Next, Hugo or Eleventy), or keep one as a second source of the pages: `pb check` and every deploy report its output and refuse an app's empty shell. Write the site like a Ghost theme, without Handlebars. A tool may compile CSS or JavaScript that pages load (`npx @tailwindcss/cli`, `npx esbuild --bundle`); no tool may write an `.html` file. It suits landing pages, portfolios and company sites, not documentation sites or app code.
 
 ## Before you start
 - With PageButler's tools connected, call `pagebutler_guide` first: it returns these rules.
@@ -85,6 +85,6 @@ A page is a complete HTML document, named by its file (`about/index.html` is `ab
 - `pb help --json` lists every command, flag and exit code (75: not yet; 77: sign in); `--json` gives any result as data.
 
 ## More
-Each `references/<name>.md` here is also `pagebutler_guide` with `topic` `<name>`. Fields and tool deploys: `references/tools.md`; photos: `assets_import`.
+Each `references/<name>.md` is also `pagebutler_guide` with `topic` `<name>`. Fields and tool deploys: `references/tools.md`; photos: `assets_import`; comments: `references/comments.md`.
 
 Written for template vocabulary 0, the `version` in `pb.config.json`.
