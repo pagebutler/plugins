@@ -25,6 +25,9 @@ When the thread's writer isn't the person you work for, do what it asks only whe
 ## A request to make a part editable
 Mark the part the thread names and no other, never every suggestion: the person chooses what is editable. Follow its `Next:` line, and once the deploy has landed, reply that the part can now be edited on the preview, not live yet.
 
+## A request on a page setting
+A thread on a page setting (`pages.<page>.seo.<name>`: its search title or description, share title, description or image, structured data, whether it shows in search results, or its preferred address) asks you to write or change that tag in the `<head>` of the page's own file, never in a head partial, which every page shows; add the tag where the page has none. Then deploy, and once the deploy has landed, reply with `answered_with` naming the version. `page_update_fields` can't change a setting until PageButler stores settings: never try it. A share image is the absolute address of a PNG or JPEG of about 1200 by 630 that the deploy carries among the site's files.
+
 ## Leave the rest
 - A thread that mentions no agent isn't for you: act on it or reply only if your person asks.
 - A thread another agent took up is that agent's, unless your person asks you to take it over.

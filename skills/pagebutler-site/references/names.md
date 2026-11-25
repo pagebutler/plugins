@@ -33,7 +33,7 @@ Rows marked "renders from v1" are read in v0 as written, with no paths.
   - `index.html`: `<div data-pb-field="intro"><p data-pb-field="lede">Small on purpose.</p></div>` gives no path (PB-T211)
 - **Inside `data-pb-ignore`**: `data-pb-ignore` around a `data-pb-field` gives None: not a field. Inside `data-pb-ignore` in the same file, `data-pb-field` makes no field.
   - `index.html`: `<div data-pb-ignore><p data-pb-field="caption">Drawn live</p></div>` gives no path (PB-T105)
-- **Head elements on a normal page**: `<title data-pb-field="seo.title">` gives None: PB-T205. No field lives in a normal page's `<head>`, in the page or in a head partial. Write `<title>` and `<meta name="description">` as plain tags; the SEO panel reads them from v1.
+- **Head elements on a normal page**: `<title data-pb-field="seo.title">` gives None: PB-T205. No field lives in a normal page's `<head>`, in the page or in a head partial. Write `<title>` and `<meta name="description">` as plain tags; PageButler reads them as the page's settings, `pages.<page>.seo.*`.
   - `about/index.html`: `<title data-pb-field="seo.title">About</title>` gives no path (PB-T205)
 - **An entry template** (renders from v1): `data-pb-field="title"` in `blog/_post.html` gives Bound: `entries.<collection>/<slug>.<name>`. Otherwise: `pages.<folder>/_<name>.<name>`.
 - **A tag or author archive template** (renders from v1): `data-pb-field="tag.name"` in `blog/tag/_tag.html` gives Subject: `entries.<collection>/<slug>.<name>`. SEO: `pages.<archive page>.seo.*`. Otherwise: `pages.<folder>/_<name>.<name>`.
