@@ -2,6 +2,9 @@
 
 People who can edit a site comment on its preview, each thread pinned to a part of a page. A comment is between people unless it mentions an agent: `@` and an app's name, or `@AI` for whichever agent takes it first. Only that mention sends a thread to an agent.
 
+## Connecting to a preview
+When the person asks you to connect to their preview, or says its bar shows `No agent`, there is nothing to turn on and no code to ask for. The bar names you once you have made a PageButler call about that site, signed in as them: run `pb status` in the site's folder, or in a chat app call a tool that names the site, such as `site_status`, then tell them to look at the bar again: it shows you within 30 seconds. In Claude Code with PageButler's plugin, a session started in the site's folder, with `pb` installed, also listens for their comments; one already running when the plugin was installed or updated has to be started again for that.
+
 ## When to look
 - With `pb`: `pb comments list`, `pb comments read <thread>`, `pb comments reply <thread> --text '...'` (or `--text-file -` with the words on stdin, for an apostrophe or several lines) and `pb comments resolve <thread>`. With PageButler's tools: `comments_list`, `comment_get`, `comments_reply` and `comments_resolve`. Use `pb` where it runs, as for everything else.
 - Run `pb comments list`, or call `comments_list`, when a session on a site starts, after a deploy lands, and whenever an answer says comment threads wait for an agent: `pb status`, `pb deploy`, `site_get`, `site_status`, `deploy_status` and `pagebutler_guide` say how many.
